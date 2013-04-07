@@ -12,3 +12,4 @@ pear/
 php.ini.sample
 pkginfo/
 var/
+!/var/package/
