@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout>
+  <cms_index_index translate="label">
+    <reference name="head">
+      <action method="addJs">
+        <script>jquery/jquery-1.9.1.min.js</script>
+      </action>
+      <block type="core/text" name="google.jquery.noconflict" after="google.jquery">
+        <action method="setText">
+          <text><![CDATA[<script type="text/javascript">var $j = jQuery.noConflict(); </script>]]></text>
+        </action>
+      </block>
+
+    </reference>
+    <reference name="content">
+      <block type="core/text_list" name="delifi_search">
+        <block type="delifi_brcep/cepsearch" name="delifi_cepsearch" template="delifi/cepsearch.phtml" />
+        <block type="delifi_brcep/bairro" name="delifi_bairro" template="delifi/bairro.phtml" />
+      </block>
+    </reference>
+  </cms_index_index>
+</layout>

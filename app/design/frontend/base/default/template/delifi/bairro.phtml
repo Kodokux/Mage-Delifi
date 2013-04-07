@@ -1,0 +1,9 @@
+
+<?php foreach ($this->getBairroArray() as $_key => $_bairro) : ?>
+  <h1 style="background-color: #ccc;padding: 5px;"><?php echo strtoupper($_key); ?></h1>
+  <ul>
+    <?php foreach ($_bairro as $_b) : ?>
+      <li style="display: inline-block;min-width: 130px;margin: 5px 0;"><a href="<?php echo $this->getRenreUrl($_b); ?>"><?php echo $_b['bairro']; ?></a></li>
+      <?php endforeach; ?>
+  </ul>
+<?php endforeach; ?>

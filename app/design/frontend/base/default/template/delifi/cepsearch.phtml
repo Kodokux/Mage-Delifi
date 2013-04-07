@@ -1,0 +1,23 @@
+<div style="padding: 10px; border: 1px solid #000;">
+  <h1>Cep</h1>
+  <form id="cepForm" action="">
+    <input type="text" name="cep" id="cep" value="11081-415" /> <input type="submit" value="Search" />
+  </form>
+  <div style="display: none;">
+    <div>Cidade: 
+  </div>
+</div>
+
+
+<script>
+  ;
+  (function($) {
+    var url = '<?php echo $this->getUrl('cep/index/load') ?>';
+    $('#cepForm').submit(function() {
+      $.getJSON(url, {cep: $('#cep').val()}, function(json) {
+        alert("JSON Data: " + json.cidade);
+      });
+      return false;
+    });
+  })($j);
+</script>
